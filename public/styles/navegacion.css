@@ -1,0 +1,161 @@
+/* Estilos generales para el nav */
+nav {
+    background: linear-gradient(90deg, #0056b3, #007bff);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out; /* Agregar transiciones suaves */
+}
+
+/* Mostrar el logo centrado */
+nav .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los enlaces */
+nav a {
+    color: #95e1d3;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Efecto hover en los enlaces */
+nav a:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+/* Ocultar enlaces de navegación por defecto en móviles */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: calc(100vh - 60px); /* Para que no se corte el contenido */
+}
+
+/* Estilos para el botón de menú en móviles */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Consultas de medios para hacerlo responsivo */
+
+/* Para pantallas más pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    nav .logo {
+        margin-bottom: 15px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* Mostrar el botón de menú solo en móviles */
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Inicialmente ocultar los enlaces de navegación */
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    /* Cuando el menú esté abierto, mostrar los enlaces */
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+/* Para pantallas más pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 16px;
+        text-align: left;
+    }
+}
+
+/* Estilo para el botón de regresar al inicio */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de hover: agrandar el botón y cambiar la sombra */
+#scrollToTopBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de foco */
+#scrollToTopBtn:focus {
+    outline: none;
+}
+/* Estilo para la flecha */
+#dropdown-arrow {
+    font-size: 30px;
+    transition: transform 0.3s ease; /* Transición suave */
+    display: none; /* Ocultar la flecha por defecto */
+    text-align: center; /* Centrar el contenido */
+    margin: 0 auto; /* Centrar el contenedor en su eje horizontal */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.4); /* Efecto de difuminado */
+    padding: 5px; /* Espaciado alrededor de la flecha */
+    color: rgba(255, 255, 255, 0.5); /* Flecha blanca con 50% de opacidad */
+}
+
+
+/* Mostrar la flecha solo cuando el menú tiene la clase 'open' */
+.nav-links.open + #dropdown-arrow {
+    display: block; /* Mostrar la flecha cuando el menú está abierto */
+}
+
+

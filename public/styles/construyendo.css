@@ -1,0 +1,55 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#navContainer {
+    flex-shrink: 0; /* El navContainer no cambia de tamaño */
+}
+
+/* Contenedor de la imagen cuadrada */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Toma el espacio restante debajo del nav */
+    background-color: #f0f0f0; /* Color de fondo opcional */
+}
+
+/* Imagen cuadrada */
+.square-image {
+    width: auto;
+    height: 100%; /* Ajusta la altura para ocupar el espacio restante */
+    max-width: 100vh; /* Limita el ancho para mantener la imagen cuadrada */
+    object-fit: contain; /* Ajuste sin expandirse ni distorsionarse */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .square-image {
+        width: 100%; /* La imagen ocupará el 100% del ancho de la pantalla */
+        height: auto; /* Ajustamos la altura para mantener las proporciones */
+        max-width: 100%; /* Elimina cualquier límite de ancho */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    body, html {
+        flex-direction: column; /* Aseguramos que el contenido sea vertical */
+    }
+
+    .image-container {
+        padding: 10px; /* Añadimos algo de espacio alrededor de la imagen */
+    }
+
+    .square-image {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas muy pequeñas */
+        height: auto; /* Mantiene la proporción correcta de la imagen */
+    }
+}
+

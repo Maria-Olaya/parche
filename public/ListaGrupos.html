@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/ListaGrupos.css">
+    <link rel="stylesheet" href="styles/comentariosybotones.css">
+    <link rel="stylesheet" href="styles/Estilosgenerales.css">
+    <link rel="stylesheet" href="styles/navegacion.css">
+    <link rel="stylesheet" href="styles/publicaciones.css">
+ 
+    <title>M TalentSync</title>
+
+</head>
+
+<body class="listaGrupo"></body>
+
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <nav>
+        <div class="logo">
+            <h1>M TalentSync</h1>
+        </div>
+        <!-- Botón de menú en móviles -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+        <div class="nav-links" id="nav-links">
+            <a href="feed.html">Feed</a>
+            <a href="retos.html">Retos</a>
+            <a href="ListaGrupos.html">Grupos</a>
+            <a href="chat.html">Chat</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="https://www.magneto365.com/es">Servicio de empleo</a>  
+            <a href="crearGrupo.html" id="linkNuevaReto">Nuevo grupo</a> 
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="feed">
+            <h2>Grupos</h2>
+            <div id="grupoContainer">
+                <!-- Contenedor dinámico para los grupos -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ListaGrupos.js"></script>
+<script>
+    // Agregar un evento al botón de menú
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("open"); // Cambiar la clase 'open' para mostrar u ocultar los enlaces
+        });
+
+        // Mostrar el botón de "volver al inicio" cuando el usuario haga scroll hacia abajo
+        window.onscroll = function() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        // Función para regresar al inicio de la página con una animación suave
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } 
+</script>
+</body>
+</html>

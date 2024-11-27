@@ -1,0 +1,175 @@
+/* Publicaciones detalladas */
+.publicacion {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    border: 1px solid #ddd;
+    overflow-wrap: break-word; /* Permite que las palabras largas se dividan */
+    word-wrap: break-word; /* Para compatibilidad con navegadores más antiguos */
+    width: 100%; /* Asegura que ocupe el 100% del contenedor */
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.perfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contenido {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.foto-perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.imagen-publicacion {
+    width: 100%;
+    height: auto;
+}
+
+.video-publicacion {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Publicaciones */
+.post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+}
+
+.post .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 2px solid #007bff;
+}
+
+.post .post-content {
+    margin-left: 60px; /* Espacio para la foto de perfil */
+}
+
+.post .post-date {
+    color: #a1a1a1;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.post strong {
+    color: #0056b3;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 200px; /* Para dejar espacio para el menú lateral */
+    padding: 20px;
+    gap: 20px; /* Espacio entre el feed y las historias */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.feed {
+    flex-grow: 1;
+    padding: 10px;
+    width: 100%; /* En pantallas pequeñas, ocupa el 100% del ancho */
+}
+
+.feed h2 {
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+
+/* Pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0; /* Quitar el margen izquierdo para pantallas más pequeñas */
+        flex-direction: column; /* Apilar los elementos (feed y otros) en una sola columna */
+    }
+
+    .feed {
+        width: 100%; /* Asegura que el feed ocupe todo el ancho */
+        margin-bottom: 20px; /* Espacio entre publicaciones */
+    }
+
+    .publicacion {
+        max-width: 100%; /* Las publicaciones ocuparán todo el ancho en pantallas pequeñas */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .post {
+        width: 100%; /* Las publicaciones ocuparán todo el ancho */
+        padding: 10px; /* Reducir padding */
+    }
+
+    .post .profile-pic {
+        width: 35px; /* Reducir tamaño de la foto de perfil */
+        height: 35px;
+    }
+
+    .post .post-content {
+        margin-left: 50px; /* Ajustar el espacio para la foto de perfil */
+    }
+
+    .feed h2 {
+        font-size: 1.2em; /* Reducir tamaño del título */
+    }
+
+    /* Desplazar el contenedor de publicaciones 500px hacia abajo */
+    .feed {
+        margin-top: 0px; /* Desplazamiento hacia abajo */
+    }
+}
+
+/* Pantallas más pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    .publicacion {
+        padding: 8px; /* Reducir más el padding */
+    }
+
+    .post .profile-pic {
+        width: 30px; /* Reducir aún más el tamaño de la foto de perfil */
+        height: 30px;
+    }
+
+    .post .post-content {
+        margin-left: 45px; /* Reducir el espacio para la foto de perfil */
+    }
+
+    .feed h2 {
+        font-size: 1.1em; /* Reducir tamaño del título */
+    }
+
+    /* También puedes agregar el mismo desplazamiento aquí si es necesario */
+    .feed {
+        margin-top: 0px; /* Desplazamiento hacia abajo */
+    }
+}

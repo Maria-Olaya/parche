@@ -1,0 +1,121 @@
+/* Estilos globales para botones */
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a6f99;
+}
+
+/* Estilos para la sección de respuestas */
+.respuestas-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+    padding: 10px;
+}
+
+/* Formulario de respuesta */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 0;
+    flex-grow: 1; /* Esto permite que el formulario ocupe el espacio restante */
+}
+
+/* Estilo para el campo de texto */
+form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espacio entre el input y el botón */
+    transition: border-color 0.3s;
+}
+
+/* Estilo para los botones dentro del formulario */
+form button[type="submit"] {
+    align-self: flex-start; /* Hace que el botón esté alineado a la izquierda */
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #1a6f99;
+}
+
+/* Medias Queries para hacerlo responsive */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .respuestas-container {
+        padding: 5px;
+    }
+
+    form {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    form input[type="text"], form button[type="submit"] {
+        width: 100%; /* Hace que los elementos ocupen todo el ancho */
+        margin-bottom: 8px; /* Ajusta el margen entre los elementos */
+    }
+
+    button {
+        padding: 8px 12px; /* Ajusta el tamaño de los botones en pantallas pequeñas */
+    }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    .respuestas-container {
+        padding: 10px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input[type="text"], form button[type="submit"] {
+        width: 100%; /* Hace que los elementos ocupen todo el ancho */
+        margin-bottom: 10px; /* Ajusta el margen entre los elementos */
+    }
+
+    button {
+        padding: 10px 15px; /* Botones más grandes en tabletas */
+    }
+}
+
+/* Pantallas grandes (escritorio) */
+@media (min-width: 1025px) {
+    .respuestas-container {
+        padding: 15px;
+    }
+
+    form {
+        flex-direction: row; /* Disposición horizontal en pantallas grandes */
+        justify-content: space-between;
+    }
+
+    form input[type="text"], form button[type="submit"] {
+        width: auto; /* Deja los elementos al tamaño que necesitan */
+        margin-right: 10px; /* Espacio entre el campo de texto y el botón */
+    }
+
+    button {
+        padding: 12px 20px; /* Tamaño grande de botones en escritorio */
+    }
+}
